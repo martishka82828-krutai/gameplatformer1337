@@ -1,5 +1,44 @@
-print("hello")
-print("привет я люблю арбузии")
-print("привет я люблю  арбузии ТОЖЕ")
-print("k.k мне уже холодно")
-print(":D")
+import pygame
+from player import Player
+
+import pygame
+
+pygame.init()
+
+WIDTH = 800
+HEIGHT = 600
+
+clock = pygame.time.Clock()
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+
+
+def main():
+
+    sasha3000671337 = Player()
+
+    while True:
+
+        # 1) Считывание ввода
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return None
+
+        # -----------------
+        # 2) Обновление состояния игры
+        pygame.display.update()
+
+        sasha3000671337.update()
+
+        # -----------------
+        # 3) Отрисовка обновленного состояния
+        screen.fill("lightblue")
+
+        sasha3000671337.draw(screen=screen)
+
+        clock.tick(60)
+
+
+if __name__ == '__main__':
+    main()
